@@ -5,7 +5,7 @@ import {
   HomeImg,
   HomeLocation,
 } from './styles'
-import { MapPinLine, ShoppingCart } from 'phosphor-react'
+import { MapPin, ShoppingCart } from 'phosphor-react'
 import logoImg from '../../assets/logo.svg'
 
 export function Header() {
@@ -17,11 +17,12 @@ export function Header() {
 
       <HeaderIcons>
         <HomeLocation>
-          <MapPinLine size={32} /> <p>São Paulo, SP</p>
+          <MapPin size={28} weight="fill" />
+          São Paulo, SP
         </HomeLocation>
 
         <HomeBuy>
-          <ShoppingCart size={32} />
+          <ShoppingCart size={28} weight="fill" />
         </HomeBuy>
       </HeaderIcons>
     </HeaderContainer>

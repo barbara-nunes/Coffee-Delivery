@@ -31,6 +31,7 @@ export function Finished() {
               </MapPinIcon>{' '}
               <p>Entrega em</p>{' '}
             </FinishedInfos>
+
             <FinishedInfos>
               {' '}
               <TimerIcon>
@@ -39,6 +40,7 @@ export function Finished() {
               </TimerIcon>{' '}
               <p>Previsão de entrega</p>{' '}
             </FinishedInfos>
+
             <FinishedInfos>
               {' '}
               <DollarIcon>

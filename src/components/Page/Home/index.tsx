@@ -32,11 +32,11 @@ import {
   CoffeeName,
   CoffeeDescription,
   CoffeeType,
-  ImgMenu,
   CoffeePrice,
   CoffeeBuy,
   CoffeeValueBuy,
   AmountCoffee,
+  ImgMenu,
 } from './styles'
 import { ShoppingCartSimple } from 'phosphor-react'
 import { priceFormatter } from '../../utils/index'
@@ -204,7 +204,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>
@@ -255,7 +259,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>
@@ -306,7 +314,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>
@@ -317,7 +329,8 @@ export function Home() {
             <ImgMenu>
               <img src={CoffeeGelado} alt="" />
             </ImgMenu>
-            <CoffeeType> Tradicional Gelado</CoffeeType>
+            <CoffeeType> Tradicional </CoffeeType>
+            <CoffeeType> Gelado</CoffeeType>
             <CoffeeName>{expressoGelado.name}</CoffeeName>
             <CoffeeDescription>
               {' '}
@@ -357,7 +370,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>
@@ -368,7 +385,8 @@ export function Home() {
             <ImgMenu>
               <img src={CoffeeLeite} alt="" />
             </ImgMenu>
-            <CoffeeType> Tradicional Com leite </CoffeeType>
+            <CoffeeType> Tradicional </CoffeeType>
+            <CoffeeType> Com leite </CoffeeType>
             <CoffeeName>{cafeComLeite.name}</CoffeeName>
             <CoffeeDescription>
               {' '}
@@ -408,7 +426,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>
@@ -419,7 +441,8 @@ export function Home() {
             <ImgMenu>
               <img src={CoffeeLatte} alt="" />
             </ImgMenu>
-            <CoffeeType> Tradicional Com leite </CoffeeType>
+            <CoffeeType> Tradicional </CoffeeType>
+            <CoffeeType> Com leite </CoffeeType>
             <CoffeeName>{latte.name}</CoffeeName>
             <CoffeeDescription>
               {' '}
@@ -459,7 +482,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>
@@ -470,7 +497,8 @@ export function Home() {
             <ImgMenu>
               <img src={CoffeeCapuccino} alt="" />
             </ImgMenu>
-            <CoffeeType> Tradicional Com leite </CoffeeType>
+            <CoffeeType> Tradicional </CoffeeType>
+            <CoffeeType> Com leite </CoffeeType>
             <CoffeeName>{capuccino.name}</CoffeeName>
             <CoffeeDescription>
               {' '}
@@ -510,7 +538,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>
@@ -521,7 +553,8 @@ export function Home() {
             <ImgMenu>
               <img src={CoffeeMacchiato} alt="" />
             </ImgMenu>
-            <CoffeeType> Tradicional Com leite </CoffeeType>
+            <CoffeeType> Tradicional </CoffeeType>
+            <CoffeeType> Com leite </CoffeeType>
             <CoffeeName>{macchiato.name}</CoffeeName>
             <CoffeeDescription>
               {' '}
@@ -561,7 +594,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>
@@ -572,7 +609,8 @@ export function Home() {
             <ImgMenu>
               <img src={CoffeeMocaccino} alt="" />
             </ImgMenu>
-            <CoffeeType> Tradicional Com leite </CoffeeType>
+            <CoffeeType> Tradicional </CoffeeType>
+            <CoffeeType> Com leite </CoffeeType>
             <CoffeeName>{mocaccino.name}</CoffeeName>
             <CoffeeDescription>
               {' '}
@@ -612,7 +650,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>
@@ -623,7 +665,8 @@ export function Home() {
             <ImgMenu>
               <img src={ChocolateQuente} alt="" />
             </ImgMenu>
-            <CoffeeType> Especial Com leite </CoffeeType>
+            <CoffeeType> Especial </CoffeeType>
+            <CoffeeType> Com leite </CoffeeType>
             <CoffeeName>{chocolateQuente.name}</CoffeeName>
             <CoffeeDescription>
               {' '}
@@ -663,7 +706,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>
@@ -674,7 +721,9 @@ export function Home() {
             <ImgMenu>
               <img src={CoffeeCubano} alt="" />
             </ImgMenu>
-            <CoffeeType> Especial Alcoólico Gelado </CoffeeType>
+            <CoffeeType> Especial </CoffeeType>
+            <CoffeeType> Alcoólico </CoffeeType>
+            <CoffeeType> Gelado </CoffeeType>
             <CoffeeName>{cubano.name}</CoffeeName>
             <CoffeeDescription>
               {' '}
@@ -714,7 +763,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>
@@ -765,7 +818,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>
@@ -816,7 +873,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>
@@ -827,7 +888,8 @@ export function Home() {
             <ImgMenu>
               <img src={CoffeeIrlandes} alt="" />
             </ImgMenu>
-            <CoffeeType> Especial Alcoólico </CoffeeType>
+            <CoffeeType> Especial </CoffeeType>
+            <CoffeeType> Alcoólico </CoffeeType>
             <CoffeeName>{irlandes.name}</CoffeeName>
             <CoffeeDescription>
               {' '}
@@ -867,7 +929,11 @@ export function Home() {
                 </button>
               </AmountCoffee>
               <CoffeeBuy>
-                <ShoppingCartSimple size={20} onClick={() => buyCoffee()}>
+                <ShoppingCartSimple
+                  size={20}
+                  onClick={() => buyCoffee()}
+                  weight="fill"
+                >
                   {goToCheckout && <Navigate to="/Checkout" replace={true} />}
                 </ShoppingCartSimple>
               </CoffeeBuy>

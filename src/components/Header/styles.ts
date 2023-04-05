@@ -4,10 +4,17 @@ export const HeaderContainer = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+
   margin: auto;
   margin-bottom: 50px;
+  top: 0;
+  left: 0;
+
   left: 160px;
   right: 160px;
+  width: 100%;
+  height: 6.5rem;
 `
 
 export const HomeImg = styled.div`
@@ -27,14 +34,14 @@ export const HeaderIcons = styled.div`
 
 export const HomeLocation = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  flex-direction: row;
   align-items: center;
   padding: 8px;
   gap: 4px;
 
-  width: 130px;
-  height: 23px;
+  width: 50%;
+  height: 30px;
   margin-top: 32px;
 
   background: #ebe5f9;
@@ -49,6 +56,7 @@ export const HomeBuy = styled.button`
   align-items: center;
   padding: 1px;
   gap: 2px;
+
   border: none;
   width: 35px;
   height: 35px;

@@ -134,6 +134,7 @@ export const CheckoutPaymentOptions = styled(RadioGroup.Root)`
   justify-content: center;
   align-items: center;
   gap: 12px;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 0.5rem;

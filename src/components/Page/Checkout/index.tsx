@@ -5,6 +5,8 @@ import {
   MapPinLine,
   Money,
 } from 'phosphor-react'
+import { useState } from 'react'
+import { Navigate } from 'react-router-dom'
 
 import { Header } from '../../Header'
 
@@ -31,8 +33,10 @@ import {
 } from './styles'
 
 export function Checkout() {
-  /* const [] = useState
-  function creditCard() {} */
+  const [goToFinished, setGoToFinished] = useState()
+  function confirmOrder() {
+    setGoToFinished(true)
+  }
 
   return (
     <PageCheckout>
@@ -88,7 +92,7 @@ export function Checkout() {
             <CashOptionsButton value="checked">
               {' '}
               <CreditCardIcon>
-                <CreditCard size={18} /* onClick={() => creditCard()} */ />
+                <CreditCard size={18} />
               </CreditCardIcon>{' '}
               <p>Cartão de crédito</p>{' '}
             </CashOptionsButton>
@@ -114,7 +118,8 @@ export function Checkout() {
         <CheckSelect>
           <h3>Cafés selecionados</h3>
 
-          <button type="submit" /* disabled={/* isSubmitting } */>
+          <button type="submit" onClick={() => confirmOrder()}>
+            {goToFinished && <Navigate to="/Finished" replace={true} />}
             Confirmar Pedido
           </button>
         </CheckSelect>
