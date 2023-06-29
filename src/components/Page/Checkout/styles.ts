@@ -32,25 +32,28 @@ export const LocationAddressIcon = styled.div`
 
 export const CheckoutAddress = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
   gap: 8px;
+  align-self: stretch;
 
-  width: 560px;
-  height: 44px;
+  padding: 40px;
+
+  p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    flex: 1 0 0;
+  }
 `
 
 export const CheckoutInput = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0;
+  padding: 30px;
   gap: 16px;
-
-  width: 560px;
-  height: 216px;
-  margin-bottom: 40px;
+  align-self: stretch;
 
   input {
     border-radius: 6px;
@@ -112,14 +115,20 @@ export const InputUF = styled.div`
 `
 
 export const CheckoutPayment = styled.div`
-  margin-top: 40px;
   display: flex;
   align-items: flex-start;
-  padding: 0px;
   gap: 8px;
+  align-self: stretch;
 
-  width: 560px;
-  height: 44px;
+  padding: 30px;
+
+  p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    flex: 1 0 0;
+  }
 `
 
 export const CurrencyDollarIcon = styled.div`
@@ -149,9 +158,7 @@ export const CashOptionsButton = styled(RadioGroup.Item)`
   justify-content: center;
   padding: 16px;
   gap: 12px;
-
-  width: 150px;
-  height: 20px;
+  flex: 1 0 0;
 
   background: #e6e5e5;
   border-radius: 6px;
@@ -174,6 +181,13 @@ export const BankIcon = styled.div`
 `
 
 export const MoneyIcon = styled.div`
+  color: #4b2995;
+  width: 22px;
+  height: 22px;
+  flex: none;
+`
+
+export const TrashIcon = styled.div`
   color: #4b2995;
   width: 22px;
   height: 22px;
@@ -212,4 +226,21 @@ export const CheckSelect = styled.div`
       transition: background-color 0.2s;
     }
   }
+`
+
+export const Remove = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 8px;
+  gap: 4px;
+  height: 32px;
+  border-radius: 6px;
+`
+export const TotalOrder = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
 `

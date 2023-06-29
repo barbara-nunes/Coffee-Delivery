@@ -4,9 +4,10 @@ import {
   CurrencyDollar,
   MapPinLine,
   Money,
+  TrashSimple,
 } from 'phosphor-react'
 import { useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 
 import { Header } from '../../Header'
 
@@ -30,10 +31,16 @@ import {
   MoneyIcon,
   Page,
   PageCheckout,
+  TrashIcon,
+  Remove,
+  TotalOrder,
 } from './styles'
 
 export function Checkout() {
-  const [goToFinished, setGoToFinished] = useState()
+  const { state } = useLocation()
+  console.log(state)
+
+  const [goToFinished, setGoToFinished] = useState(false)
   function confirmOrder() {
     setGoToFinished(true)
   }
@@ -53,8 +60,10 @@ export function Checkout() {
               <MapPinLine size={20} />
             </LocationAddressIcon>
 
-            <p>Endereço de Entregas</p>
-            <p>Informe o endereço onde deseja receber seu pedido</p>
+            <div>
+              <p>Endereço de Entregas</p>
+              <p>Informe o endereço onde deseja receber seu pedido</p>
+            </div>
           </CheckoutAddress>
 
           <CheckoutInput>
@@ -81,11 +90,13 @@ export function Checkout() {
             <CurrencyDollarIcon>
               <CurrencyDollar size={20} />
             </CurrencyDollarIcon>
-            <p>Pagamento</p>
 
-            <p>
-              O pagamento é feito na entrega. Escolha a forma que deseja pagar
-            </p>
+            <div>
+              <p>Pagamento</p>
+              <p>
+                O pagamento é feito na entrega. Escolha a forma que deseja pagar
+              </p>
+            </div>
           </CheckoutPayment>
 
           <CheckoutPaymentOptions>
@@ -117,6 +128,27 @@ export function Checkout() {
 
         <CheckSelect>
           <h3>Cafés selecionados</h3>
+          {/* <img src={} alt="" /> */}
+          {/* <p>Expresso tradicional {coffee.name} </p> */}
+          {/* <p>{priceFormatter.format(9.9)}</p> */}
+          {/* <AmountCoffee>
+            <button onClick={() => removeCoffee(coffee.name)}> - </button>
+            <div>{coffee.quantity}</div>
+            <button onClick={() => addCoffee(coffee.name)}> + </button>
+          </AmountCoffee> */}
+
+          <Remove>
+            <TrashIcon>
+              <TrashSimple size={18} />
+            </TrashIcon>{' '}
+            <p>Remover</p>
+          </Remove>
+
+          <TotalOrder>
+            <p>Total de itens</p>
+            <p>Entrega</p>
+            <h3>Total</h3>
+          </TotalOrder>
 
           <button type="submit" onClick={() => confirmOrder()}>
             {goToFinished && <Navigate to="/Finished" replace={true} />}

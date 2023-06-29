@@ -75,7 +75,14 @@ export const ImgMenu = styled.div`
 
 export const CoffeeType = styled.div`
   text-align: center;
+  align-items: center;
+  flex-direction: row;
+  //margin: 0 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+
   gap: 4px;
+  padding: 0;
   height: 21px;
   top: 112px;
   left: 20px;
@@ -114,10 +121,10 @@ export const CoffeeDescription = styled.div`
 
 export const CoffeeValueBuy = styled.div`
   display: flex;
-  flex-direction: row;
+  width: 208px;
   justify-content: space-between;
-  margin: auto;
   align-items: center;
+  margin: auto;
 `
 
 export const CoffeePrice = styled.div``
@@ -126,9 +133,7 @@ export const AmountCoffee = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  width: 45px;
-  height: 15px;
+  height: 30px;
   padding: 8px;
   gap: 4px;
 
@@ -144,6 +149,7 @@ export const AmountCoffee = styled.button`
     align-items: center;
     padding: 8px;
     gap: 4px;
+    height: 30px;
 
     color: #4b2995;
     background-color: #ebe5f9;
