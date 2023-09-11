@@ -10,6 +10,8 @@ import { useState } from 'react'
 import { Navigate, useLocation } from 'react-router-dom'
 
 import { Header } from '../../Header'
+import { priceFormatter } from '../../utils/index'
+import { AmountCoffee, CoffeeName } from '../Home/styles'
 
 import {
   BankIcon,
@@ -34,15 +36,42 @@ import {
   TrashIcon,
   Remove,
   TotalOrder,
+  CoffeePrice,
+  CheckTotal,
+  Check,
 } from './styles'
 
 export function Checkout() {
   const { state } = useLocation()
+
+  const [coffees, setCoffees] = useState(state)
   console.log(state)
 
   const [goToFinished, setGoToFinished] = useState(false)
   function confirmOrder() {
     setGoToFinished(true)
+  }
+
+  function addCoffee(name: string) {
+    const coffeeIndex = coffees.findIndex((coffee) => name === coffee.name)
+
+    const selectedCoffee = coffees[coffeeIndex]
+    selectedCoffee.quantity = selectedCoffee.quantity + 1
+
+    setCoffees([...coffees])
+  }
+
+  function removeCoffee(name: string) {
+    const coffeeIndex = coffees.findIndex((coffee) => name === coffee.name)
+
+    const selectedCoffee = coffees[coffeeIndex]
+    const quantityEqualsZero = selectedCoffee.quantity === 0
+
+    selectedCoffee.quantity = quantityEqualsZero
+      ? selectedCoffee.quantity
+      : selectedCoffee.quantity - 1
+
+    setCoffees([...coffees])
   }
 
   return (
@@ -126,35 +155,59 @@ export function Checkout() {
           </CheckoutPaymentOptions>
         </CheckoutOrder>
 
-        <CheckSelect>
+        <Check>
           <h3>Cafés selecionados</h3>
-          {/* <img src={} alt="" /> */}
-          {/* <p>Expresso tradicional {coffee.name} </p> */}
-          {/* <p>{priceFormatter.format(9.9)}</p> */}
-          {/* <AmountCoffee>
-            <button onClick={() => removeCoffee(coffee.name)}> - </button>
-            <div>{coffee.quantity}</div>
-            <button onClick={() => addCoffee(coffee.name)}> + </button>
-          </AmountCoffee> */}
 
-          <Remove>
-            <TrashIcon>
-              <TrashSimple size={18} />
-            </TrashIcon>{' '}
-            <p>Remover</p>
-          </Remove>
+          <CheckSelect>
+            {coffees.map((coffee) => {
+              return (
+                <div key={coffee.name}>
+                  <div>
+                    <img src={coffee.image} alt="" />
+                    <CoffeeName>{coffee.name}</CoffeeName>
+                    <CoffeePrice>{priceFormatter.format(9.9)}</CoffeePrice>
+                    <AmountCoffee>
+                      <button onClick={() => removeCoffee(coffee.name)}>
+                        {' '}
+                        -{' '}
+                      </button>
+                      <div>{coffee.quantity}</div>
+                      <button onClick={() => addCoffee(coffee.name)}>
+                        {' '}
+                        +{' '}
+                      </button>
+                    </AmountCoffee>
 
-          <TotalOrder>
-            <p>Total de itens</p>
-            <p>Entrega</p>
-            <h3>Total</h3>
-          </TotalOrder>
+                    <Remove>
+                      <button type="submit">
+                        <TrashIcon>
+                          <TrashSimple size={18} />
+                        </TrashIcon>
+                        Remover
+                      </button>
+                    </Remove>
+                  </div>
+                </div>
+              )
+            })}
+          </CheckSelect>
 
-          <button type="submit" onClick={() => confirmOrder()}>
-            {goToFinished && <Navigate to="/Finished" replace={true} />}
-            Confirmar Pedido
-          </button>
-        </CheckSelect>
+          <CheckTotal>
+            <TotalOrder>
+              <p>Total de itens</p>{' '}
+              <CoffeePrice>{priceFormatter.format(9.9)}</CoffeePrice>
+              <p>Entrega</p>{' '}
+              <CoffeePrice>{priceFormatter.format(3.5)}</CoffeePrice>
+              <h4>Total</h4>{' '}
+              <CoffeePrice>{priceFormatter.format(9.9)}</CoffeePrice>
+            </TotalOrder>
+
+            <button type="submit" onClick={() => confirmOrder()}>
+              {goToFinished && <Navigate to="/Finished" replace={true} />}
+              Confirmar Pedido
+            </button>
+          </CheckTotal>
+        </Check>
       </Page>
     </PageCheckout>
   )

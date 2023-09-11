@@ -51,7 +51,7 @@ export const CheckoutInput = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 30px;
+  padding: 0px;
   gap: 16px;
   align-self: stretch;
 
@@ -146,7 +146,6 @@ export const CheckoutPaymentOptions = styled(RadioGroup.Root)`
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 0.5rem;
 
   width: 560px;
   height: 51px;
@@ -161,9 +160,13 @@ export const CashOptionsButton = styled(RadioGroup.Item)`
   flex: 1 0 0;
 
   background: #e6e5e5;
+  border-color: #e6e5e5;
   border-radius: 6px;
   cursor: pointer;
-  border: 0;
+
+  :focus {
+    border-color: #4b2995;
+  }
 `
 
 export const CreditCardIcon = styled.div`
@@ -194,17 +197,44 @@ export const TrashIcon = styled.div`
   flex: none;
 `
 
-export const CheckSelect = styled.div`
+export const Check = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
-  padding: 40px;
-  gap: 24px;
+  flex-direction: column;
 
-  width: 40%;
-  height: 498px;
-  left: 832px;
-  top: 182px;
+  h3 {
+    margin-bottom: 30px;
+  }
+`
+
+export const CheckSelect = styled.div`
+  button[type='submit'] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 91px;
+    padding: 0px 8px;
+    gap: 4px;
+    border-radius: 6px;
+    background: #e6e5e5;
+    color: #4b2995;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
+      background: #e6e5e5;
+      transition: background-color 0.2s;
+    }
+  }
+`
+
+export const CheckTotal = styled.div`
+  margin-top: 20px;
 
   button[type='submit'] {
     height: 46px;
@@ -212,9 +242,7 @@ export const CheckSelect = styled.div`
     background: #dbac2c;
     color: #fff;
     border-radius: 6px;
-
     width: 368px;
-    height: 46px;
 
     &:disabled {
       opacity: 0.6;
@@ -228,19 +256,49 @@ export const CheckSelect = styled.div`
   }
 `
 
+export const AmountCoffee = styled.button``
+
 export const Remove = styled.div`
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 8px;
-  gap: 4px;
-  height: 32px;
-  border-radius: 6px;
+
+  button[type='submit'] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 91px;
+    padding: 0px 8px;
+    gap: 4px;
+    border-radius: 6px;
+    background: #e6e5e5;
+    color: #4b2995;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
+      background: #e6e5e5;
+      transition: background-color 0.2s;
+    }
+  } */
 `
+
 export const TotalOrder = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 12px;
+  margin-bottom: 20px;
+`
+
+export const CoffeePrice = styled.div`
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
 `

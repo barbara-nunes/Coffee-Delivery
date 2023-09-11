@@ -37,7 +37,7 @@ export const Icon = styled.div`
 `
 
 export const ImageCoffee = styled.div`
-  //width: 476px;
+  width: 476px;
   width: 40%;
   height: 360px;
   left: 804px;
@@ -46,12 +46,13 @@ export const ImageCoffee = styled.div`
 export const MenuContainer = styled.div`
   margin-left: 160px;
   margin-right: 160px;
+  margin-bottom: 50px;
 `
 export const Menu = styled.div`
   font-family: 'Baloo 2';
   font-style: normal;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 32px;
   line-height: 130%;
 
   width: 193px;
@@ -64,7 +65,8 @@ export const Menu = styled.div`
 `
 export const MenuContainerCoffee = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 4fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px 20px;
 `
 export const ImgMenu = styled.div`
   text-align: center;
@@ -77,9 +79,9 @@ export const CoffeeType = styled.div`
   text-align: center;
   align-items: center;
   flex-direction: row;
-  //margin: 0 50px;
   margin-left: 50px;
   margin-right: 50px;
+  margin-bottom: 8px;
 
   gap: 4px;
   padding: 0;
@@ -89,13 +91,14 @@ export const CoffeeType = styled.div`
 
   color: #c47f17;
   background: #f1e9c9;
-  border-radius: 999px;
+  border-radius: 100px;
 `
 export const CoffeeName = styled.div`
   height: 26px;
   left: 20px;
   right: 20px;
   top: 149px;
+  padding: 0;
 
   font-family: 'Baloo 2';
   font-style: normal;
