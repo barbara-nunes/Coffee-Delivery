@@ -13,7 +13,7 @@ export const CheckoutOrder = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
-  margin-left: 150px;
+  margin-left: 80px;
 
   width: 60%;
 `
@@ -202,6 +202,7 @@ export const Check = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  margin-right: 80px;
 
   h3 {
     margin-bottom: 30px;
@@ -231,6 +232,17 @@ export const CheckSelect = styled.div`
       transition: background-color 0.2s;
     }
   }
+`
+export const Image = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  height: 60px;
+  gap: 15px;
+`
+
+export const Buttons = styled.div`
+  display: flex;
+  gap: 5px;
 `
 
 export const CheckTotal = styled.div`

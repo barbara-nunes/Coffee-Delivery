@@ -39,6 +39,8 @@ import {
   CoffeePrice,
   CheckTotal,
   Check,
+  Buttons,
+  Image,
 } from './styles'
 
 export function Checkout() {
@@ -163,29 +165,34 @@ export function Checkout() {
               return (
                 <div key={coffee.name}>
                   <div>
-                    <img src={coffee.image} alt="" />
-                    <CoffeeName>{coffee.name}</CoffeeName>
+                    <Image>
+                      <img src={coffee.image} alt="" />
+                      <CoffeeName>{coffee.name}</CoffeeName>
+                    </Image>
                     <CoffeePrice>{priceFormatter.format(9.9)}</CoffeePrice>
-                    <AmountCoffee>
-                      <button onClick={() => removeCoffee(coffee.name)}>
-                        {' '}
-                        -{' '}
-                      </button>
-                      <div>{coffee.quantity}</div>
-                      <button onClick={() => addCoffee(coffee.name)}>
-                        {' '}
-                        +{' '}
-                      </button>
-                    </AmountCoffee>
 
-                    <Remove>
-                      <button type="submit">
-                        <TrashIcon>
-                          <TrashSimple size={18} />
-                        </TrashIcon>
-                        Remover
-                      </button>
-                    </Remove>
+                    <Buttons>
+                      <AmountCoffee>
+                        <button onClick={() => removeCoffee(coffee.name)}>
+                          {' '}
+                          -{' '}
+                        </button>
+                        <div>{coffee.quantity}</div>
+                        <button onClick={() => addCoffee(coffee.name)}>
+                          {' '}
+                          +{' '}
+                        </button>
+                      </AmountCoffee>
+
+                      <Remove>
+                        <button type="submit">
+                          <TrashIcon>
+                            <TrashSimple size={18} />
+                          </TrashIcon>
+                          Remover
+                        </button>
+                      </Remove>
+                    </Buttons>
                   </div>
                 </div>
               )
